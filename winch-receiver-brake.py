@@ -89,9 +89,9 @@ class WinchController:
             elif direction == "COUNTER_CLOCKWISE":
                 GPIO.output(CLOCKWISE_PIN, GPIO.HIGH)          # Pin 5 to HIGH  
                 GPIO.output(COUNTER_CLOCKWISE_PIN, GPIO.LOW)   # Pin 6 to GND
-            else:  # STOP
-                GPIO.output(CLOCKWISE_PIN, GPIO.HIGH)          # Both pins HIGH
-                GPIO.output(COUNTER_CLOCKWISE_PIN, GPIO.HIGH)  # = motor stop
+            else:  # BRAKE
+                GPIO.output(CLOCKWISE_PIN, GPIO.LOW)          # Both pins GND
+                GPIO.output(COUNTER_CLOCKWISE_PIN, GPIO.LOW)  # = motor brake
                 
             self.current_direction = direction
             
